@@ -3,7 +3,7 @@
   <%= f.label :user, "User"%>
   <%= f.collection_select(:user_id, User.all, :id, :username, include_blank: "Please select a user") %><br>
   <%= f.hidden_field :post_id %>
-  <%= f.fields_for :user, @post.comments.last.user_build do |user_attributes|
+  <%= f.fields_for :user, @post.comments.last.build_user do |user_attributes|
     <%= user_attributes.text_field :username %>
   <% end %>
   <%= f.submit %>
