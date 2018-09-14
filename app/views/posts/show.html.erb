@@ -38,8 +38,13 @@
 </ul>
 
 <h3>Add a Comment</h3>
-<%= render '/comments/form', post: @post %>
-=======
+<%= form_for @post.comments.build do |f| %>
+  <%= f.text_field :content, placeholder: "Add your comment here!" %><br>
+  <%= f.label "Select your user" %>
+  <%= f.collection_select(:user_id, User.all, :id, :username) %><br>
+  <%= f.label "Create a new user" %>
+  <%= f.fields_for :user, @post.comments.build do |user_fields| %>
+    <%= user_fields.text_field :username %>
   <% end %>
-</ul>
->>>>>>> 7a59af43878b1315853284ad12741976944b5630
+  <%= f.submit %>
+<% end %>
