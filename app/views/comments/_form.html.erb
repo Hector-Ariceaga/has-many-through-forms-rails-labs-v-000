@@ -3,6 +3,6 @@
   <%= f.text_field :content, placeholder: "Add your comment here!" %><br>
   <%= f.label :user, "Select your user" %>
   <%= f.collection_select(:user_id, User.all, :id, :username) %><br>
-  
+
   <%= f.submit %>
 <% end %>
