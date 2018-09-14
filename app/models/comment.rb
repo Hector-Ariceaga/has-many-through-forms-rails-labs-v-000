@@ -5,5 +5,6 @@ class Comment < ActiveRecord::Base
 
   def no_comment
     if !self.content
+    end
   end
 end
