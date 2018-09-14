@@ -27,7 +27,7 @@
   <%= f.label "Select" %>
   <%= f.collection_select(:user_id, User.all, :id, :username) %><br>
   <%= f.label "Create" %>
-  <%= f.fields_for :user, @post.comments.users.build do |user_fields| %>
+  <%= f.fields_for :user, @post.comments.last.user.build do |user_fields| %>
     <%= user_fields.text_field :username %>
   <% end %>
   <%= f.submit %>
