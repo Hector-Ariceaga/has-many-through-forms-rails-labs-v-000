@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     if comment.save
       redirect_to comment.post
     else
-      render :'post/show'
+      render :'posts/new'
     end
   end
 
