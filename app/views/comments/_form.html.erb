@@ -1,8 +1,8 @@
 
 <%= form_for @post.comments.build do |f| %>
   <%= f.text_field :content, placeholder: "Add your comment here!" %><br>
-  <%= f.label :user, "Select your user" %>
-  <%= f.collection_select(:user_id, User.all, :id, :username) %><br>
+  <%= f.label :user, "User"%>
+  <%= f.collection_select(:user_id, User.all, :id, :username, include_blank: "Please select a user") %><br>
   <%= f.hidden_field :post_id %>
   <%= f.submit %>
 <% end %>
