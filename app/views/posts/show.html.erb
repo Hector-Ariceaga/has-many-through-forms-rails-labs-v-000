@@ -11,7 +11,7 @@
 <h3>Comments</h3>
 <ul>
   <% @post.comments.each do |comment| %>
-    <% if comment.content %>
+    <% if comment.empty? %>
       <li><%= comment.user.username %> says: <%= comment.content %></li>
     <% end %>
   <% end %>
