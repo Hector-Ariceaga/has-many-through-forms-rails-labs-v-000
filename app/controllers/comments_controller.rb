@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
       redirect_to comment.post
     else
       render :'post/show'
+    end
   end
 
   private
