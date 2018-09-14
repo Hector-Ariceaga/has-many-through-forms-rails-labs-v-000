@@ -4,7 +4,6 @@ class Comment < ActiveRecord::Base
   accepts_nested_attributes_for :user, reject_if: :all_blank || :no_comment
 
   def no_comment
-    if !self.content
-    end
+    !!self.blank?
   end
 end
